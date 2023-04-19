@@ -1,6 +1,15 @@
+
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  // add async before function for below to work. 
+  // I like the below bettter buuut wont pass the test
+  // const url = "https://anapioficeandfire.com/api/books"
+  // const respone = await fetch(url)
+  // const books = await respone.json()  
+  // return renderBooks(books)
+  return fetch("https://anapioficeandfire.com/api/books")
+  .then((resp) => resp.json())
+  .then((json) => renderBooks(json));
 }
 
 function renderBooks(books) {
